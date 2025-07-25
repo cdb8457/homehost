@@ -1,0 +1,3107 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.2.8",
+  "deps": {
+    "tslib": "^2.3.0",
+    "@nx/eslint-plugin": "17.2.8",
+    "@nx/jest": "17.2.8",
+    "@nx/js": "17.2.8",
+    "@nx/next": "17.2.8",
+    "@nx/workspace": "17.2.8",
+    "@types/jest": "^29.4.0",
+    "@types/node": "20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "~8.48.0",
+    "eslint-config-next": "14.0.4",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "nx": "17.2.8",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {
+    "@/*": [
+      "./src/*"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "apps/cloud-api/Controllers/EnterpriseSupportController.cs",
+        "hash": "12304985488026626588"
+      },
+      {
+        "file": "apps/cloud-api/Services/IBackupRecoveryService.cs",
+        "hash": "619922951287181441"
+      },
+      {
+        "file": ".env.local.example",
+        "hash": "6862986850759500047"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/TournamentController.cs",
+        "hash": "5963377668166200977"
+      },
+      {
+        "file": "docs/architecture/data-models.md",
+        "hash": "3781027601581914389"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/AIGameOptimizationController.cs",
+        "hash": "9474012321999253571"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/PlayerInvitationController.cs",
+        "hash": "4835505775038348019"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAuthService.cs",
+        "hash": "3998164029765226992"
+      },
+      {
+        "file": "apps/cloud-api/Services/TournamentService.cs",
+        "hash": "1659612187774629929"
+      },
+      {
+        "file": ".nx/cache/d/daemon.log",
+        "hash": "5361275333599793732"
+      },
+      {
+        "file": "docs/prd/epic-4.md",
+        "hash": "3822709530608748360"
+      },
+      {
+        "file": "apps/cloud-api/Services/IPlayerInvitationService.cs",
+        "hash": "6999011876655039695"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAdvancedServerConfigService.cs",
+        "hash": "9588668259380891220"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/DTOs/GameDTOs.cs",
+        "hash": "14308460479150888665"
+      },
+      {
+        "file": "apps/cloud-api/Services/CommunityAnalyticsService.cs",
+        "hash": "10298637545650710859"
+      },
+      {
+        "file": "apps/cloud-api/Services/CustomGameService.cs",
+        "hash": "5379291660205856374"
+      },
+      {
+        "file": "apps/cloud-api/Services/PlayerInvitationService.cs",
+        "hash": "16412022884079843001"
+      },
+      {
+        "file": "apps/cloud-api/Services/IGameLibraryService.cs",
+        "hash": "2349331221700620929"
+      },
+      {
+        "file": "apps/cloud-api/Data/SeedData.cs",
+        "hash": "16763621448076820410"
+      },
+      {
+        "file": "next.config.js",
+        "hash": "10926337865070635602"
+      },
+      {
+        "file": "apps/cloud-api/Migrations/001_InitialCreate.sql",
+        "hash": "17095963678195492132"
+      },
+      {
+        "file": "apps/cloud-api/Services/ITournamentService.cs",
+        "hash": "13557214386222772877"
+      },
+      {
+        "file": "docs/architecture/components.md",
+        "hash": "3745630788934384678"
+      },
+      {
+        "file": "team-fullstack (2).txt",
+        "hash": "4328874729697455962"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/CommunityAnalyticsController.cs",
+        "hash": "9742985601943530646"
+      },
+      {
+        "file": "apps/cloud-api/Services/AuthService.cs",
+        "hash": "13147227823943972136"
+      },
+      {
+        "file": "apps/cloud-api/Services/ICommunityService.cs",
+        "hash": "586381645256201147"
+      },
+      {
+        "file": "apps/cloud-api/Services/IPlayerManagementService.cs",
+        "hash": "15331229895438647282"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "18289723398688188800"
+      },
+      {
+        "file": "apps/cloud-api/Models/Game.cs",
+        "hash": "18366178067705768694"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/AdvancedServerConfigController.cs",
+        "hash": "5293817596734937229"
+      },
+      {
+        "file": "docs/prd/overview.md",
+        "hash": "2164980147643949258"
+      },
+      {
+        "file": "docs/prd.md",
+        "hash": "4480988654504447524"
+      },
+      {
+        "file": "docs/project-brief.md",
+        "hash": "12439721275590975935"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/StreamingController.cs",
+        "hash": "13041889734072337829"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAdvancedGamingService.cs",
+        "hash": "16471621271357435127"
+      },
+      {
+        "file": "docs/prd/epic-3.md",
+        "hash": "11064476795941243927"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "1727492908510061465"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "14175974007137139043"
+      },
+      {
+        "file": "apps/cloud-api/Services/StreamingService.cs",
+        "hash": "675488610978224584"
+      },
+      {
+        "file": "docs/prd/requirements.md",
+        "hash": "10906574388657246066"
+      },
+      {
+        "file": "apps/cloud-api/Services/EnterpriseSupportService.cs",
+        "hash": "10174154588010987463"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/RevenueController.cs",
+        "hash": "56786411090878851"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/APIIntegrationController.cs",
+        "hash": "3631793883512122310"
+      },
+      {
+        "file": "docs/architecture/tech-stack.md",
+        "hash": "5287460147803706817"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/CommunityController.cs",
+        "hash": "13770000029469410193"
+      },
+      {
+        "file": "nx.json",
+        "hash": "10806963406400151586"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/ServersController.cs",
+        "hash": "13167824601466558289"
+      },
+      {
+        "file": "apps/cloud-api/Services/CommunityService.cs",
+        "hash": "1640813437849052255"
+      },
+      {
+        "file": "docs/architecture.md",
+        "hash": "6173920148833607661"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/CrossPlatformIntegrationController.cs",
+        "hash": "3168541056759678056"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAIGameOptimizationService.cs",
+        "hash": "2766178683893861537"
+      },
+      {
+        "file": "README.md",
+        "hash": "11533433617639072694"
+      },
+      {
+        "file": "docs/README.md",
+        "hash": "11554574810548504917"
+      },
+      {
+        "file": ".claude/settings.local.json",
+        "hash": "17592592254947645301"
+      },
+      {
+        "file": "apps/cloud-api/cloud-api.csproj",
+        "hash": "11986496082724627815"
+      },
+      {
+        "file": "apps/cloud-api/Services/APIIntegrationService.cs",
+        "hash": "459813753492750579"
+      },
+      {
+        "file": "apps/cloud-api/Services/SteamService.cs",
+        "hash": "15226278930770558743"
+      },
+      {
+        "file": "apps/cloud-api/Services/RevenueService.cs",
+        "hash": "8620794679356677614"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/HealthController.cs",
+        "hash": "7185665892218534122"
+      },
+      {
+        "file": "apps/cloud-api/Program.cs",
+        "hash": "2602854125670052472"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/GameLibraryController.cs",
+        "hash": "15410491489466240062"
+      },
+      {
+        "file": "apps/cloud-api/Services/ISocialDiscoveryService.cs",
+        "hash": "15920481925530420637"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/CustomGamesController.cs",
+        "hash": "1958251976715020391"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/AuthController.cs",
+        "hash": "7364526433905606414"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/PerformanceMonitoringController.cs",
+        "hash": "5407122243959046587"
+      },
+      {
+        "file": "postcss.config.js",
+        "hash": "17430255171421331363"
+      },
+      {
+        "file": "docs/architecture/overview.md",
+        "hash": "3851725648377700735"
+      },
+      {
+        "file": "tailwind.config.ts",
+        "hash": "6420677254886350227"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/GamesController.cs",
+        "hash": "2911369188927493234"
+      },
+      {
+        "file": "docs/prd/epic-2.md",
+        "hash": "10019498431119087535"
+      },
+      {
+        "file": "apps/cloud-api/Services/PerformanceMonitoringService.cs",
+        "hash": "4870996159682511558"
+      },
+      {
+        "file": "apps/cloud-api/Services/IPerformanceMonitoringService.cs",
+        "hash": "2313593763895460573"
+      },
+      {
+        "file": "docs/prd/epic-1.md",
+        "hash": "8529160354689288352"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "9650670908548604144"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "11751419578623344213"
+      },
+      {
+        "file": "apps/cloud-api/Services/AdvancedGamingService.cs",
+        "hash": "18002491210766170894"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/BusinessIntelligenceController.cs",
+        "hash": "2989144721014235680"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/SocialDiscoveryController.cs",
+        "hash": "3974236789958590654"
+      },
+      {
+        "file": "apps/cloud-api/Services/IStreamingService.cs",
+        "hash": "339751168315601947"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/AdvancedModdingController.cs",
+        "hash": "5171842937984171287"
+      },
+      {
+        "file": "apps/cloud-api/Services/EnterpriseAdminService.cs",
+        "hash": "8748216012637513905"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAPIIntegrationService.cs",
+        "hash": "9337996437989449749"
+      },
+      {
+        "file": "apps/cloud-api/Services/ICrossPlatformIntegrationService.cs",
+        "hash": "5721284952442832966"
+      },
+      {
+        "file": "apps/cloud-api/Services/IBusinessIntelligenceService.cs",
+        "hash": "16245712524738210055"
+      },
+      {
+        "file": "apps/cloud-api/Services/AdvancedServerConfigService.cs",
+        "hash": "7096174054776710768"
+      },
+      {
+        "file": "apps/cloud-api/Data/HomeHostContext.cs",
+        "hash": "11720640949394158664"
+      },
+      {
+        "file": "docs/architecture/database-schema.md",
+        "hash": "5399120328874071721"
+      },
+      {
+        "file": "docs/prd/README.md",
+        "hash": "14341613273734496009"
+      },
+      {
+        "file": "docs/architecture/README.md",
+        "hash": "10062958004233408170"
+      },
+      {
+        "file": "apps/cloud-api/Services/ICustomGameService.cs",
+        "hash": "16294180530380296278"
+      },
+      {
+        "file": "package.json",
+        "hash": "182444963695138746"
+      },
+      {
+        "file": "apps/cloud-api/Services/IAdvancedModdingService.cs",
+        "hash": "11135581824855404994"
+      },
+      {
+        "file": "apps/cloud-api/Services/IEnterpriseSupportService.cs",
+        "hash": "1543211617341739512"
+      },
+      {
+        "file": "apps/cloud-api/Services/BackupRecoveryService.cs",
+        "hash": "2618632997791590858"
+      },
+      {
+        "file": "apps/cloud-api/Services/BusinessIntelligenceService.cs",
+        "hash": "8423068033028835854"
+      },
+      {
+        "file": "apps/cloud-api/Services/CrossPlatformIntegrationService.cs",
+        "hash": "9920479207381967080"
+      },
+      {
+        "file": "apps/cloud-api/Services/IEnterpriseAdminService.cs",
+        "hash": "4007088430616070537"
+      },
+      {
+        "file": "apps/cloud-api/Services/ISteamService.cs",
+        "hash": "936231082182653237"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/BackupRecoveryController.cs",
+        "hash": "7058936121936865768"
+      },
+      {
+        "file": "docs/architecture/deployment.md",
+        "hash": "8465575999134910356"
+      },
+      {
+        "file": ".env.example",
+        "hash": "7473635685044026774"
+      },
+      {
+        "file": "apps/cloud-api/Services/ICommunityAnalyticsService.cs",
+        "hash": "1628276816905731129"
+      },
+      {
+        "file": "apps/cloud-api/Services/IRevenueService.cs",
+        "hash": "15343902636763715938"
+      },
+      {
+        "file": "docs/front-end-spec.md",
+        "hash": "15359641088459659615"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "14533269988532543945"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/AdvancedGamingController.cs",
+        "hash": "3692076027269993031"
+      },
+      {
+        "file": "apps/cloud-api/Models/UserSession.cs",
+        "hash": "9876664326778197917"
+      },
+      {
+        "file": "apps/cloud-api/Services/GameLibraryService.cs",
+        "hash": "54571652387070583"
+      },
+      {
+        "file": "apps/cloud-api/Services/SocialDiscoveryService.cs",
+        "hash": "11470483816694876386"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/SteamController.cs",
+        "hash": "9507220380426534302"
+      },
+      {
+        "file": "apps/cloud-api/Services/PlayerManagementService.cs",
+        "hash": "803005207256282063"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "9611525043556884754"
+      },
+      {
+        "file": "docs/architecture/external-apis.md",
+        "hash": "182686470579743638"
+      },
+      {
+        "file": "apps/cloud-api/Services/AIGameOptimizationService.cs",
+        "hash": "16061736921107842009"
+      },
+      {
+        "file": "apps/cloud-api/Services/AdvancedModdingService.cs",
+        "hash": "12676674614538964997"
+      },
+      {
+        "file": "apps/cloud-api/Controllers/EnterpriseAdminController.cs",
+        "hash": "2839708980330928825"
+      }
+    ],
+    "projectFileMap": {
+      "homehost-desktop": [
+        {
+          "file": "apps/desktop-app/DEPLOYMENT.md",
+          "hash": "17474484273311314864"
+        },
+        {
+          "file": "apps/desktop-app/PRODUCTION-DEPLOYMENT-GUIDE.md",
+          "hash": "13137145801527707261"
+        },
+        {
+          "file": "apps/desktop-app/PRODUCTION-READY-SUMMARY.md",
+          "hash": "6261058761108443547"
+        },
+        {
+          "file": "apps/desktop-app/README.md",
+          "hash": "2117341201705248754"
+        },
+        {
+          "file": "apps/desktop-app/UI-INTEGRATION-GUIDE.md",
+          "hash": "17531263890564097926"
+        },
+        {
+          "file": "apps/desktop-app/build/asset-manifest.json",
+          "hash": "4803823092866570056"
+        },
+        {
+          "file": "apps/desktop-app/build/electron.js",
+          "hash": "13268587795804382621",
+          "deps": [
+            "npm:electron",
+            "npm:path",
+            "npm:electron-is-dev"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/build/favicon.ico",
+          "hash": "11821655077407739837"
+        },
+        {
+          "file": "apps/desktop-app/build/images/placeholder.svg",
+          "hash": "1964003418425710569"
+        },
+        {
+          "file": "apps/desktop-app/build/index.html",
+          "hash": "11138166035905522658"
+        },
+        {
+          "file": "apps/desktop-app/build/manifest.json",
+          "hash": "6535853338366719883"
+        },
+        {
+          "file": "apps/desktop-app/build/static/css/main.dd5e3d2c.css",
+          "hash": "6963105406273156519"
+        },
+        {
+          "file": "apps/desktop-app/build/static/css/main.dd5e3d2c.css.map",
+          "hash": "12356645091597214422"
+        },
+        {
+          "file": "apps/desktop-app/build/static/js/main.8dadd903.js",
+          "hash": "13712542266507797681"
+        },
+        {
+          "file": "apps/desktop-app/build/static/js/main.8dadd903.js.LICENSE.txt",
+          "hash": "14647736669511024625"
+        },
+        {
+          "file": "apps/desktop-app/build/static/js/main.8dadd903.js.map",
+          "hash": "14910569072679690283"
+        },
+        {
+          "file": "apps/desktop-app/config/environments/development.json",
+          "hash": "11694182377822688136"
+        },
+        {
+          "file": "apps/desktop-app/config/environments/production.json",
+          "hash": "5702408637647901758"
+        },
+        {
+          "file": "apps/desktop-app/config/environments/staging.json",
+          "hash": "12106247734976353062"
+        },
+        {
+          "file": "apps/desktop-app/config/production.config.js",
+          "hash": "10596088892648553504"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/AuthenticationService.js.html",
+          "hash": "3099682162564481217"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/CloudSync.js.html",
+          "hash": "1858279938288288088"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/CommunityGrowthAnalytics.js.html",
+          "hash": "9204157232997771135"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/CommunityManager.js.html",
+          "hash": "7757277043190383837"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/ErrorHandler.js.html",
+          "hash": "16085325260013080849"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/GameServerManager.js.html",
+          "hash": "2819568606898280883"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/PlayerEngagement.js.html",
+          "hash": "8481687820616406422"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/PluginManager.js.html",
+          "hash": "8603771930969268797"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/PluginMarketplaceRevenue.js.html",
+          "hash": "16116566030038011088"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/RevenueDashboard.js.html",
+          "hash": "15447945826910675492"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/ServerMonitor.js.html",
+          "hash": "16187171642700826570"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SignalRService.js.html",
+          "hash": "7141372332021868458"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SteamIntegration.js.html",
+          "hash": "18395323727169684591"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SteamService.full.js.html",
+          "hash": "1366808182586689237"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SteamService.js.html",
+          "hash": "2264252895901235783"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SystemMonitor.js.html",
+          "hash": "18307281385250529414"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/SystemOptimization.js.html",
+          "hash": "12182366802912361432"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/Web3Integration.js.html",
+          "hash": "894016310983046139"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/base.css",
+          "hash": "6204767174569381253"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/block-navigation.js",
+          "hash": "1801078621803424330"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/favicon.png",
+          "hash": "13402560043085226048"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/index.html",
+          "hash": "6003734960705924981"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/AuthenticationService.js.html",
+          "hash": "11270718150937384885"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/CloudSync.js.html",
+          "hash": "18097488607960333183"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/CommunityGrowthAnalytics.js.html",
+          "hash": "17698009312525567654"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/CommunityManager.js.html",
+          "hash": "18278665743875188234"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/ErrorHandler.js.html",
+          "hash": "11401855888599385143"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/GameServerManager.js.html",
+          "hash": "15060506904123973889"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/PlayerEngagement.js.html",
+          "hash": "18163085862993589226"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/PluginManager.js.html",
+          "hash": "17914311708097607378"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/PluginMarketplaceRevenue.js.html",
+          "hash": "13428904338485331388"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/RevenueDashboard.js.html",
+          "hash": "15862039552178052204"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/ServerMonitor.js.html",
+          "hash": "4226747205673657461"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SignalRService.js.html",
+          "hash": "10227964903450864897"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SteamIntegration.js.html",
+          "hash": "10822508333485366088"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SteamService.full.js.html",
+          "hash": "503350971379564139"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SteamService.js.html",
+          "hash": "866307473390631026"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SystemMonitor.js.html",
+          "hash": "9343595206869403967"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/SystemOptimization.js.html",
+          "hash": "16706676063479014237"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/Web3Integration.js.html",
+          "hash": "2412592145939873645"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/base.css",
+          "hash": "6204767174569381253"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/block-navigation.js",
+          "hash": "1801078621803424330"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/favicon.png",
+          "hash": "13402560043085226048"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/index.html",
+          "hash": "15208761832550310014"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/prettify.css",
+          "hash": "8163588510556258587"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/prettify.js",
+          "hash": "15884788582061322779"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/sort-arrow-sprite.png",
+          "hash": "254831142482329146"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov-report/sorter.js",
+          "hash": "17053119163225536857"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/lcov.info",
+          "hash": "12758050910998104762"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/prettify.css",
+          "hash": "8163588510556258587"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/prettify.js",
+          "hash": "15884788582061322779"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/sort-arrow-sprite.png",
+          "hash": "254831142482329146"
+        },
+        {
+          "file": "apps/desktop-app/coverage/e2e/sorter.js",
+          "hash": "17053119163225536857"
+        },
+        {
+          "file": "apps/desktop-app/demo-server.js",
+          "hash": "14539920002878721536",
+          "deps": [
+            "npm:http",
+            "npm:fs",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/jest.config.js",
+          "hash": "14279647411050973467"
+        },
+        {
+          "file": "apps/desktop-app/jest.e2e.config.js",
+          "hash": "12931998390789531098"
+        },
+        {
+          "file": "apps/desktop-app/logs/startup-report.json",
+          "hash": "10954892066232531852"
+        },
+        {
+          "file": "apps/desktop-app/package.json",
+          "hash": "5385017488967246791",
+          "deps": [
+            "npm:@microsoft/signalr",
+            "npm:axios",
+            "npm:bcrypt",
+            "npm:cors",
+            "npm:electron",
+            "npm:electron-is-dev",
+            "npm:electron-store",
+            "npm:express",
+            "npm:express-rate-limit",
+            "npm:helmet",
+            "npm:ps-tree",
+            "npm:react",
+            "npm:react-dom",
+            "npm:socket.io",
+            "npm:systeminformation",
+            "npm:uuid",
+            "npm:validator",
+            "npm:commander",
+            "npm:@testing-library/jest-dom",
+            "npm:@testing-library/react",
+            "npm:@testing-library/user-event",
+            "npm:@types/jest",
+            "npm:@types/node",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:concurrently",
+            "npm:cross-env",
+            "npm:electron-builder",
+            "npm:node-fetch",
+            "npm:react-scripts",
+            "npm:socket.io-client",
+            "npm:typescript",
+            "npm:wait-on",
+            "npm:web-vitals"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/advanced-backup-pro/plugin/index.js",
+          "hash": "12769778646593828691",
+          "deps": [
+            "npm:@homehost/plugin-sdk"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/advanced-backup-pro/plugin/manifest.json",
+          "hash": "9690979819252650223"
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/advanced-backup-pro/sandbox.json",
+          "hash": "10914749358013203025"
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/discord-bridge-ultimate/plugin/index.js",
+          "hash": "3813211626614036131",
+          "deps": [
+            "npm:@homehost/plugin-sdk"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/discord-bridge-ultimate/plugin/manifest.json",
+          "hash": "12950907555118977656"
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/discord-bridge-ultimate/sandbox.json",
+          "hash": "4863093163192165163"
+        },
+        {
+          "file": "apps/desktop-app/plugin-sandboxes/test-plugin/sandbox.json",
+          "hash": "9287610332222620750"
+        },
+        {
+          "file": "apps/desktop-app/public/electron.js",
+          "hash": "13268587795804382621",
+          "deps": [
+            "npm:electron",
+            "npm:path",
+            "npm:electron-is-dev"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/public/favicon.ico",
+          "hash": "11821655077407739837"
+        },
+        {
+          "file": "apps/desktop-app/public/images/placeholder.svg",
+          "hash": "1964003418425710569"
+        },
+        {
+          "file": "apps/desktop-app/public/index.html",
+          "hash": "12882939025875495446"
+        },
+        {
+          "file": "apps/desktop-app/public/manifest.json",
+          "hash": "6535853338366719883"
+        },
+        {
+          "file": "apps/desktop-app/quick-demo.js",
+          "hash": "7600573027317481088",
+          "deps": [
+            "npm:http",
+            "npm:fs",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/scripts/build.js",
+          "hash": "3034728209250579225",
+          "deps": [
+            "npm:electron-builder",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/scripts/deploy.js",
+          "hash": "10165644018550249488",
+          "deps": [
+            "npm:path",
+            "npm:commander",
+            "npm:electron-store",
+            [
+              "npm:child_process",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/scripts/dev.js",
+          "hash": "14135650467635788104",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/scripts/production-start.js",
+          "hash": "17336314198531035550",
+          "deps": [
+            "npm:fs",
+            "npm:path",
+            "npm:os"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/simple-demo.html",
+          "hash": "6033517312735566011"
+        },
+        {
+          "file": "apps/desktop-app/src/index.js",
+          "hash": "12083514367375364123",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/main.js",
+          "hash": "8472476425400139518",
+          "deps": [
+            "npm:electron",
+            "npm:path",
+            "npm:electron-is-dev",
+            "npm:electron-store",
+            [
+              "npm:uuid",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/preload.js",
+          "hash": "11270763065985160539",
+          "deps": [
+            "npm:electron"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/AuthenticationService.js",
+          "hash": "8376904047470564201",
+          "deps": [
+            "npm:events",
+            "npm:crypto",
+            "npm:electron",
+            [
+              "npm:https",
+              "dynamic"
+            ],
+            [
+              "npm:url",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/CloudSync.js",
+          "hash": "3868534122921440945",
+          "deps": [
+            "npm:events",
+            "npm:https",
+            "npm:url",
+            [
+              "npm:crypto",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/CommunityGrowthAnalytics.js",
+          "hash": "14260623558589262459",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/CommunityManager.js",
+          "hash": "7358245125912040433",
+          "deps": [
+            "npm:events",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/DeploymentService.js",
+          "hash": "15545447384669801470",
+          "deps": [
+            "npm:events",
+            "npm:path",
+            "npm:fs",
+            "npm:child_process",
+            "npm:util",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/ErrorHandler.js",
+          "hash": "5451545620039895981",
+          "deps": [
+            "npm:events",
+            "npm:fs",
+            "npm:path",
+            "npm:net",
+            [
+              "npm:https",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/GameServerManager.js",
+          "hash": "14321156114755344633",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:fs",
+            "npm:uuid",
+            "npm:ps-tree",
+            "npm:events"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/HealthCheckService.js",
+          "hash": "11314749176242314416",
+          "deps": [
+            "npm:events",
+            "npm:os",
+            "npm:fs",
+            "npm:path",
+            [
+              "npm:child_process",
+              "dynamic"
+            ],
+            [
+              "npm:util",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/PerformanceMonitor.js",
+          "hash": "9946407360776507987",
+          "deps": [
+            "npm:os",
+            "npm:process",
+            "npm:events",
+            "npm:perf_hooks",
+            [
+              "npm:v8",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/PlayerEngagement.js",
+          "hash": "2694224172325396322",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/PluginManager.js",
+          "hash": "6533435555575661185",
+          "deps": [
+            "npm:events",
+            "npm:path",
+            "npm:fs",
+            "npm:child_process",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/PluginMarketplaceRevenue.js",
+          "hash": "4984927205432387689",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/RateLimitingService.js",
+          "hash": "2658880397532530101",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/RevenueDashboard.js",
+          "hash": "8868334404736994294",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SecurityAuditor.js",
+          "hash": "13841367062231826784",
+          "deps": [
+            "npm:fs",
+            "npm:path",
+            "npm:crypto",
+            "npm:events",
+            [
+              "npm:net",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SecurityManager.js",
+          "hash": "3792939690473214810",
+          "deps": [
+            "npm:crypto",
+            "npm:bcrypt",
+            "npm:express-rate-limit",
+            "npm:helmet",
+            "npm:validator",
+            "npm:events"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/ServerMonitor.js",
+          "hash": "4692816966511045280",
+          "deps": [
+            "npm:events",
+            "npm:child_process",
+            "npm:util",
+            "npm:os"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SignalRService.js",
+          "hash": "13224903682678858049",
+          "deps": [
+            "npm:express",
+            "npm:cors",
+            "npm:http",
+            "npm:events",
+            "npm:uuid",
+            "npm:os",
+            [
+              "npm:socket.io",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SteamIntegration.js",
+          "hash": "14587410559515459029",
+          "deps": [
+            "npm:events",
+            "npm:path",
+            "npm:fs",
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SteamService.full.js",
+          "hash": "4652603717726521256",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:fs",
+            "npm:util"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SteamService.js",
+          "hash": "6348062282754516607",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:fs",
+            "npm:os",
+            "npm:util"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SystemMonitor.js",
+          "hash": "17552475201720612090",
+          "deps": [
+            "npm:systeminformation",
+            "npm:events"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/SystemOptimization.js",
+          "hash": "66682154651486981",
+          "deps": [
+            "npm:axios",
+            "npm:os",
+            "npm:util",
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/main/services/Web3Integration.js",
+          "hash": "8228307475317970656",
+          "deps": [
+            "npm:events",
+            "npm:crypto"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/App.css",
+          "hash": "11547079687482346601"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/App.js",
+          "hash": "11512889891414926989",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Authentication.css",
+          "hash": "17523324066607263213"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Authentication.js",
+          "hash": "3199392592034802500",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/CommunityGrowthAnalytics.css",
+          "hash": "2288270370976538830"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/CommunityGrowthAnalytics.js",
+          "hash": "15918696766711549622",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/CommunityManager.css",
+          "hash": "4121308517759590937"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/CommunityManager.js",
+          "hash": "5692024431466821966",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Dashboard.css",
+          "hash": "11901044469521914439"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Dashboard.js",
+          "hash": "9700883960805238210",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/DeploymentManager.css",
+          "hash": "13451764236145875884"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/DeploymentManager.js",
+          "hash": "16953727546464528728",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ErrorHandler.css",
+          "hash": "9516509719996240192"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ErrorHandler.js",
+          "hash": "1712910469244908534",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/GameLibrary.css",
+          "hash": "3074594508830143015"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/GameLibrary.js",
+          "hash": "1930490059830113776",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/HealthMonitor.css",
+          "hash": "16965184346851341631"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/HealthMonitor.js",
+          "hash": "16248256937481954026",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/LoadingScreen.css",
+          "hash": "1561363675970586228"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/LoadingScreen.js",
+          "hash": "282086766077294578",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PerformanceDashboard.css",
+          "hash": "18197217256106620338"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PerformanceDashboard.js",
+          "hash": "13418759629092581167",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PlayerEngagement.css",
+          "hash": "963580413019426857"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PlayerEngagement.js",
+          "hash": "7146268890025640634",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PluginMarketplace.css",
+          "hash": "13481799111253317782"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PluginMarketplace.js",
+          "hash": "13161286028493955695",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PluginMarketplaceRevenue.css",
+          "hash": "4796187914418626930"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/PluginMarketplaceRevenue.js",
+          "hash": "2126801953410647510",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RealTimeMonitor.css",
+          "hash": "2262118352045549567"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RealTimeMonitor.js",
+          "hash": "16445520806695621704",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RealTimeStatus.css",
+          "hash": "467831528202416871"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RealTimeStatus.js",
+          "hash": "5007944337194204794",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RemoteAccess.css",
+          "hash": "17633345995639443396"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RemoteAccess.js",
+          "hash": "3576611019505600567",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RevenueDashboard.css",
+          "hash": "1094744484871310262"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/RevenueDashboard.js",
+          "hash": "10602109057910375639",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SecurityMonitor.css",
+          "hash": "5779895897244059222"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SecurityMonitor.js",
+          "hash": "15829972379772541198",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ServerDetailsModal.css",
+          "hash": "10622709417349554650"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ServerDetailsModal.js",
+          "hash": "15728485612377972743",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ServerManager.css",
+          "hash": "14406144817769806689"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/ServerManager.js",
+          "hash": "14274534554853536851",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Settings.css",
+          "hash": "18288283653938077805"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Settings.js",
+          "hash": "16428551991778724134",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Sidebar.css",
+          "hash": "8735582901028960017"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Sidebar.js",
+          "hash": "10868257877044481781",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SteamManager.css",
+          "hash": "11002934404783183532"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SteamManager.js",
+          "hash": "14057809906239764466",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SystemOptimizer.css",
+          "hash": "7368322348761766374"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/SystemOptimizer.js",
+          "hash": "6570817218226397966",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Web3Integration.css",
+          "hash": "9206565066136454158"
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/components/Web3Integration.js",
+          "hash": "13649183738325525435",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/index.js",
+          "hash": "11369610622037126663",
+          "deps": [
+            "npm:react",
+            "npm:react-dom/client"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/src/renderer/services/SignalRClient.js",
+          "hash": "13210326994279257914",
+          "deps": [
+            "npm:socket.io-client",
+            "npm:events"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/temp-e2e-tests/e2e-test-store.json",
+          "hash": "8514420889735326082"
+        },
+        {
+          "file": "apps/desktop-app/temp-error-handling-tests/error-handling-test-store.json",
+          "hash": "8514420889735326082"
+        },
+        {
+          "file": "apps/desktop-app/test-backup-restore.js",
+          "hash": "2217427297039089828",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-community-manager.js",
+          "hash": "2558151176634862313",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-end-to-end.js",
+          "hash": "5730510209506823798",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:child_process",
+            "npm:module",
+            "npm:axios",
+            "npm:socket.io-client"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-file-config-management.js",
+          "hash": "14005524304816695762",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-game-server-deployment.js",
+          "hash": "110088238398072515",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-integration.js",
+          "hash": "9499893473927380033",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-main-process.js",
+          "hash": "7137987993312898603",
+          "deps": [
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-performance-alerts.js",
+          "hash": "3272463957163425970",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-react-ui.js",
+          "hash": "5973887847948695151",
+          "deps": [
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-server-monitoring.js",
+          "hash": "10829130045057292967",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-signalr-remote-control.js",
+          "hash": "18078617645787100609",
+          "deps": [
+            "npm:axios",
+            "npm:socket.io-client",
+            "npm:child_process",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-signalr.js",
+          "hash": "7478937103033996117",
+          "deps": [
+            "npm:electron-store",
+            "npm:uuid",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-startup.js",
+          "hash": "9805840455271965286",
+          "deps": [
+            "npm:path",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-steam-integration.js",
+          "hash": "16369440211098661050",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-structure.js",
+          "hash": "1842587975253539514",
+          "deps": [
+            "npm:fs",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-system-optimization.js",
+          "hash": "3735317543965187620",
+          "deps": [
+            "npm:module"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/test-web-client.js",
+          "hash": "7430290035072682640",
+          "deps": [
+            "npm:axios",
+            "npm:socket.io-client"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/PluginManager.test.js",
+          "hash": "9293480578602501806",
+          "deps": [
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/PluginMarketplaceRevenue.test.js",
+          "hash": "2437029129984577139"
+        },
+        {
+          "file": "apps/desktop-app/tests/RevenueDashboard.test.js",
+          "hash": "524816465566045287"
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/critical-user-journeys.test.js",
+          "hash": "17817684521367816308",
+          "deps": [
+            "npm:child_process",
+            "npm:path",
+            "npm:fs",
+            "npm:electron-store"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/cross-system-integration.test.js",
+          "hash": "6534512234723902586",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/deployment.test.js",
+          "hash": "15987685252139247014",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/error-handling.test.js",
+          "hash": "3618852408984983683",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/performance-benchmarks.test.js",
+          "hash": "10260568473994749616",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs",
+            "npm:perf_hooks"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/performance-monitor.test.js",
+          "hash": "16842209598303251228",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/rate-limiting.test.js",
+          "hash": "4415271369956422174",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/security-integration.test.js",
+          "hash": "3719725565651259204",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/e2e/signalr-integration.test.js",
+          "hash": "7180273308689189536",
+          "deps": [
+            "npm:electron-store",
+            "npm:path",
+            "npm:fs",
+            "npm:socket.io-client",
+            "npm:node-fetch",
+            [
+              "npm:node-fetch",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/integration/desktop-cloud-integration.test.js",
+          "hash": "317212679283761046",
+          "deps": [
+            "npm:electron-store"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/integration/ui-integration.test.js",
+          "hash": "17651056769186612924",
+          "deps": [
+            "npm:electron",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/tests/setup/e2e-setup.js",
+          "hash": "12153549464034239771",
+          "deps": [
+            "npm:path",
+            "npm:fs",
+            "npm:https"
+          ]
+        },
+        {
+          "file": "apps/desktop-app/web-client.html",
+          "hash": "6654712682082070569"
+        }
+      ],
+      "web-dashboard": [
+        {
+          "file": "apps/web-dashboard/.env.local",
+          "hash": "4989675768162195902"
+        },
+        {
+          "file": "apps/web-dashboard/.next/app-build-manifest.json",
+          "hash": "3122088924116277484"
+        },
+        {
+          "file": "apps/web-dashboard/.next/build-manifest.json",
+          "hash": "4022198718087905130"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/0.pack.gz",
+          "hash": "7338400084898044339"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/1.pack.gz",
+          "hash": "16338734935542186765"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/10.pack.gz",
+          "hash": "3822360603575753794"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/11.pack.gz",
+          "hash": "9812165524233717541"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/12.pack.gz",
+          "hash": "1879330646576660244"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/2.pack.gz",
+          "hash": "13395730089760071743"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/3.pack.gz",
+          "hash": "17742522780863981620"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/4.pack.gz",
+          "hash": "13178108236558169580"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/5.pack.gz",
+          "hash": "5566913003965373219"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/6.pack.gz",
+          "hash": "11463502955506203020"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/7.pack.gz",
+          "hash": "6059539671739339155"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/8.pack.gz",
+          "hash": "15090685822779263748"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/9.pack.gz",
+          "hash": "13273436608359092582"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/index.pack.gz",
+          "hash": "4502712131166910677"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/client-development/index.pack.gz.old",
+          "hash": "4762280362259165846"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/edge-server-development/0.pack.gz",
+          "hash": "13192246116119291348"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/edge-server-development/1.pack.gz",
+          "hash": "18376108654177183392"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/edge-server-development/index.pack.gz",
+          "hash": "4874055305633491368"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/edge-server-development/index.pack.gz.old",
+          "hash": "11728484635290739274"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/0.pack.gz",
+          "hash": "17817444178722302988"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/1.pack.gz",
+          "hash": "4189275601073923789"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/10.pack.gz",
+          "hash": "178989375274594732"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/2.pack.gz",
+          "hash": "3419852873795731049"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/3.pack.gz",
+          "hash": "16716225178042636"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/4.pack.gz",
+          "hash": "15920426209894043783"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/5.pack.gz",
+          "hash": "4361218176318215032"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/6.pack.gz",
+          "hash": "13439154253498800786"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/7.pack.gz",
+          "hash": "6693595506667947986"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/8.pack.gz",
+          "hash": "17534144476911032382"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/9.pack.gz",
+          "hash": "7545775301803889975"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/index.pack.gz",
+          "hash": "8148143575806001984"
+        },
+        {
+          "file": "apps/web-dashboard/.next/cache/webpack/server-development/index.pack.gz.old",
+          "hash": "15738118625900921471"
+        },
+        {
+          "file": "apps/web-dashboard/.next/package.json",
+          "hash": "11338307439248427064"
+        },
+        {
+          "file": "apps/web-dashboard/.next/react-loadable-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app-paths-manifest.json",
+          "hash": "12663587441142201446"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/api/system/monitor/route.js",
+          "hash": "14540497897523894918",
+          "deps": [
+            [
+              "npm:next",
+              "dynamic"
+            ],
+            [
+              "npm:child_process",
+              "dynamic"
+            ],
+            [
+              "npm:os",
+              "dynamic"
+            ],
+            [
+              "npm:util",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/api/system/specs/route.js",
+          "hash": "18320843055024679282",
+          "deps": [
+            [
+              "npm:next",
+              "dynamic"
+            ],
+            [
+              "npm:child_process",
+              "dynamic"
+            ],
+            [
+              "npm:os",
+              "dynamic"
+            ],
+            [
+              "npm:util",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/app/optimization/page.js",
+          "hash": "14893226919286793676",
+          "deps": [
+            [
+              "npm:next",
+              "dynamic"
+            ],
+            [
+              "npm:buffer",
+              "dynamic"
+            ],
+            [
+              "npm:crypto",
+              "dynamic"
+            ],
+            [
+              "npm:events",
+              "dynamic"
+            ],
+            [
+              "npm:http",
+              "dynamic"
+            ],
+            [
+              "npm:https",
+              "dynamic"
+            ],
+            [
+              "npm:net",
+              "dynamic"
+            ],
+            [
+              "npm:punycode",
+              "dynamic"
+            ],
+            [
+              "npm:stream",
+              "dynamic"
+            ],
+            [
+              "npm:tls",
+              "dynamic"
+            ],
+            [
+              "npm:url",
+              "dynamic"
+            ],
+            [
+              "npm:zlib",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/app/optimization/page_client-reference-manifest.js",
+          "hash": "15465039708471007233"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/page.js",
+          "hash": "4857670236451165483",
+          "deps": [
+            [
+              "npm:next",
+              "dynamic"
+            ],
+            [
+              "npm:buffer",
+              "dynamic"
+            ],
+            [
+              "npm:crypto",
+              "dynamic"
+            ],
+            [
+              "npm:events",
+              "dynamic"
+            ],
+            [
+              "npm:http",
+              "dynamic"
+            ],
+            [
+              "npm:https",
+              "dynamic"
+            ],
+            [
+              "npm:net",
+              "dynamic"
+            ],
+            [
+              "npm:punycode",
+              "dynamic"
+            ],
+            [
+              "npm:stream",
+              "dynamic"
+            ],
+            [
+              "npm:tls",
+              "dynamic"
+            ],
+            [
+              "npm:url",
+              "dynamic"
+            ],
+            [
+              "npm:zlib",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/app/page_client-reference-manifest.js",
+          "hash": "2819795805335890396"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/middleware-build-manifest.js",
+          "hash": "12578018668904100291"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/middleware-manifest.json",
+          "hash": "11919384916463558595"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/middleware-react-loadable-manifest.js",
+          "hash": "9185069726031651908"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/next-font-manifest.js",
+          "hash": "6987946118672392794"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/next-font-manifest.json",
+          "hash": "12834477393827481270"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/pages-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/server-reference-manifest.js",
+          "hash": "18283323808083226251"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/server-reference-manifest.json",
+          "hash": "9087068188754566830"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/@supabase.js",
+          "hash": "18314121168274855565"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/@swc.js",
+          "hash": "15727111140089938109"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/cookie.js",
+          "hash": "6309559158817028341"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/isows.js",
+          "hash": "16405479908940823303"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/lucide-react.js",
+          "hash": "2866196335786320632"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/next.js",
+          "hash": "10902791857034679671"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/vendor-chunks/ws.js",
+          "hash": "11999050511447207178"
+        },
+        {
+          "file": "apps/web-dashboard/.next/server/webpack-runtime.js",
+          "hash": "4316120177535950509"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/app-pages-internals.js",
+          "hash": "10457110864842682052"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/app/app/optimization/page.js",
+          "hash": "7321253164692312306"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/app/layout.js",
+          "hash": "8657156770592170890"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/app/page.js",
+          "hash": "14474788560187253814"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/main-app.js",
+          "hash": "3055382623022732235"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/polyfills.js",
+          "hash": "3837536670243305325"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/chunks/webpack.js",
+          "hash": "7928799976280681813"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/css/app/layout.css",
+          "hash": "8956586012337339313"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/development/_buildManifest.js",
+          "hash": "15678672880040024319"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/development/_ssgManifest.js",
+          "hash": "17018243955171961484"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/26a46d62cd723877-s.woff2",
+          "hash": "5820468924505243925"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/55c55f0601d81cf3-s.woff2",
+          "hash": "8658726349192049551"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/581909926a08bbc8-s.woff2",
+          "hash": "7544503975621241373"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/8e9860b6e62d6359-s.woff2",
+          "hash": "6250587600893442431"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/97e0cb1ae144a2a9-s.woff2",
+          "hash": "17550776652030238473"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/df0a9ae256c0569c-s.woff2",
+          "hash": "13559920167712985880"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/media/e4af272ccee01ff0-s.p.woff2",
+          "hash": "17280332816367325500"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/633457081244afec._.hot-update.json",
+          "hash": "10481436618516908015"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/7ff914310b0523b0.webpack.hot-update.json",
+          "hash": "13405125561290911638"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/8e27a9633ec462e3.webpack.hot-update.json",
+          "hash": "8773209185785337189"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/90ead17fdfb4d9a2.webpack.hot-update.json",
+          "hash": "12114844545721522899"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/app/layout.8e27a9633ec462e3.hot-update.js",
+          "hash": "9753681937006338500"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/app/layout.90ead17fdfb4d9a2.hot-update.js",
+          "hash": "8392412221597654634"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/webpack.7ff914310b0523b0.hot-update.js",
+          "hash": "800691695110416939"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/webpack.8e27a9633ec462e3.hot-update.js",
+          "hash": "3708078551379465737"
+        },
+        {
+          "file": "apps/web-dashboard/.next/static/webpack/webpack.90ead17fdfb4d9a2.hot-update.js",
+          "hash": "6149050659927552757"
+        },
+        {
+          "file": "apps/web-dashboard/.next/trace",
+          "hash": "2238262009561716742"
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/app/api/system/monitor/route.ts",
+          "hash": "13151090765959919218",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/app/api/system/specs/route.ts",
+          "hash": "6739042548647239785",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/app/app/optimization/page.ts",
+          "hash": "17979414559313260735",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/app/layout.ts",
+          "hash": "15826409389444617173",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/app/page.ts",
+          "hash": "9255133539834367149",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/.next/types/package.json",
+          "hash": "6094546126370684104"
+        },
+        {
+          "file": "apps/web-dashboard/AUTH_SETUP.md",
+          "hash": "10832458964156868475"
+        },
+        {
+          "file": "apps/web-dashboard/app/api/system/monitor/route.ts",
+          "hash": "11199017509500582774",
+          "deps": [
+            "npm:next",
+            "npm:os",
+            "npm:util",
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/api/system/specs/route.ts",
+          "hash": "18257662825054906798",
+          "deps": [
+            "npm:next",
+            "npm:os",
+            "npm:fs",
+            "npm:util",
+            "npm:child_process",
+            "npm:@/types/optimization"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/api/system/speedtest/route.ts",
+          "hash": "6887966682325707498",
+          "deps": [
+            "npm:next",
+            "npm:util",
+            "npm:child_process"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/alex/page.tsx",
+          "hash": "3374965449029783043",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/dashboard/DashboardOverview",
+            "npm:@/data/app"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/communities/page.tsx",
+          "hash": "772309298753765144",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/CommunityBrowser"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/console/page.tsx",
+          "hash": "7834556964494456809",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/ServerManagementConsole"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/games/page.tsx",
+          "hash": "14789651575160160452",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/MinimalGameLibrary"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/marketplace/page.tsx",
+          "hash": "5520535981359512293",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/PluginMarketplace"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/optimization/page.tsx",
+          "hash": "18040083316779496987",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/optimization/SystemOptimizer"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/page.tsx",
+          "hash": "9802674849087080736",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/dashboard/DashboardOverview",
+            "npm:@/data/app"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/app/servers/page.tsx",
+          "hash": "544551261649941955",
+          "deps": [
+            "npm:@/components/layout/AppLayout",
+            "npm:@/components/ui/card",
+            "npm:@/data/servers",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/auth/callback/page.tsx",
+          "hash": "11210770481009188039",
+          "deps": [
+            "npm:@/lib/supabase-server",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/communities/admin/page.tsx",
+          "hash": "5303794546962145674",
+          "deps": [
+            "npm:@/components/CommunityBrowser"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/communities/page.tsx",
+          "hash": "17748496119020862907",
+          "deps": [
+            "npm:@/components/CommunityBrowser"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/console/page.tsx",
+          "hash": "5625580372101122076",
+          "deps": [
+            "npm:@/components/ServerManagementConsole"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/dashboard/page.tsx",
+          "hash": "5930870116096618375",
+          "deps": [
+            "npm:@/lib/auth"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/games/page.tsx",
+          "hash": "6378933685766554796",
+          "deps": [
+            "npm:@/components/MinimalGameLibrary"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/globals.css",
+          "hash": "11922925384415501960"
+        },
+        {
+          "file": "apps/web-dashboard/app/layout.tsx",
+          "hash": "12469708742947688161",
+          "deps": [
+            "npm:next",
+            "npm:@/components/providers/AuthProviderWrapper"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/login/page.tsx",
+          "hash": "8387949005583969854",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:@/contexts/AuthContext",
+            "npm:@/components/auth/LoginForm",
+            "npm:@/components/auth/SignupForm",
+            "npm:@/components/DemoNotice",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/marketplace/alex/page.tsx",
+          "hash": "3809920729621939257",
+          "deps": [
+            "npm:@/components/PluginMarketplace"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/marketplace/page.tsx",
+          "hash": "11920805731411589548",
+          "deps": [
+            "npm:@/components/PluginMarketplace"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/marketplace/sam/page.tsx",
+          "hash": "3995741301171869548",
+          "deps": [
+            "npm:@/components/PluginMarketplace"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/app/page.tsx",
+          "hash": "17169471670861251551",
+          "deps": [
+            "npm:next/link"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/CommunityBrowser.tsx",
+          "hash": "8534104548379265145",
+          "deps": [
+            "npm:react",
+            "npm:@/types/community",
+            "npm:@/data/communities",
+            "npm:@/components/ui/CommunityCard",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/CustomGameUpload.tsx",
+          "hash": "14050987608027925421",
+          "deps": [
+            "npm:react",
+            "npm:@/lib/http-client",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/DemoNotice.tsx",
+          "hash": "8924569020666881058",
+          "deps": [
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/GameLibraryDashboard.tsx",
+          "hash": "1894351474339493032",
+          "deps": [
+            "npm:react",
+            "npm:@/types/game",
+            "npm:@/components/ui/SimpleGameCard",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/MinimalGameLibrary.tsx",
+          "hash": "7932337180322423064",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/PluginMarketplace.tsx",
+          "hash": "18274638800196315275",
+          "deps": [
+            "npm:react",
+            "npm:@/types/plugin",
+            "npm:@/data/plugins",
+            "npm:@/components/ui/PluginCard",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ServerManagementConsole.tsx",
+          "hash": "12596489601981538526",
+          "deps": [
+            "npm:react",
+            "npm:@/types/server",
+            "npm:@/data/servers",
+            "npm:@/components/ui/ServerCard",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/SteamGameDiscovery.tsx",
+          "hash": "5513789853982238620",
+          "deps": [
+            "npm:react",
+            "npm:@/lib/http-client",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/auth/AuthModal.tsx",
+          "hash": "10487244454261256756",
+          "deps": [
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/auth/LoginForm.tsx",
+          "hash": "14205330822138217271",
+          "deps": [
+            "npm:react",
+            "npm:@/contexts/AuthContext",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/auth/SignupForm.tsx",
+          "hash": "13028239201405283107",
+          "deps": [
+            "npm:react",
+            "npm:@/contexts/AuthContext",
+            "npm:@/lib/auth",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/dashboard/DashboardOverview.tsx",
+          "hash": "4770321037444813531",
+          "deps": [
+            "npm:react",
+            "npm:@/types/app",
+            "npm:@/data/app",
+            "npm:next",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/layout/AppHeader.tsx",
+          "hash": "18073317916297533787",
+          "deps": [
+            "npm:react",
+            "npm:@/types/app",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/layout/AppLayout.tsx",
+          "hash": "8702696669375223711",
+          "deps": [
+            "npm:react",
+            "npm:@/types/app",
+            "npm:@/data/app",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/layout/AppSidebar.tsx",
+          "hash": "3910406182177776754",
+          "deps": [
+            "npm:react",
+            "npm:next/link",
+            "npm:next/navigation",
+            "npm:@/types/app",
+            "npm:@/data/app",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/optimization/SystemOptimizer.tsx",
+          "hash": "12245686849730835183",
+          "deps": [
+            "npm:react",
+            "npm:lucide-react",
+            "npm:@/types/optimization",
+            "npm:@/lib/system-detection",
+            "npm:@/lib/optimization-engine"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/providers/AuthProviderWrapper.tsx",
+          "hash": "8436608285134893942",
+          "deps": [
+            "npm:@/contexts/AuthContext",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ui/CommunityCard.tsx",
+          "hash": "12648142164381479762",
+          "deps": [
+            "npm:react",
+            "npm:@/types/community",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ui/GameCard.tsx",
+          "hash": "16037154157588842156",
+          "deps": [
+            "npm:react",
+            "npm:@/types/game",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ui/PluginCard.tsx",
+          "hash": "7532294518212801081",
+          "deps": [
+            "npm:react",
+            "npm:@/types/plugin",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ui/ServerCard.tsx",
+          "hash": "3852647345960667797",
+          "deps": [
+            "npm:react",
+            "npm:@/types/server",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/components/ui/SimpleGameCard.tsx",
+          "hash": "1100570142479827411",
+          "deps": [
+            "npm:@/types/game"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/contexts/AuthContext.tsx",
+          "hash": "14667194336961861069",
+          "deps": [
+            "npm:react",
+            "npm:@/lib/auth"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/data/app.ts",
+          "hash": "8040483788416478716",
+          "deps": [
+            "npm:@/types/app"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/data/communities.ts",
+          "hash": "14962884730821930121",
+          "deps": [
+            "npm:@/types/community"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/data/games.ts",
+          "hash": "228486402866569876",
+          "deps": [
+            "npm:@/types/game"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/data/plugins.ts",
+          "hash": "1053876493326350429",
+          "deps": [
+            "npm:@/types/plugin"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/data/servers.ts",
+          "hash": "15248200053254076741",
+          "deps": [
+            "npm:@/types/server"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/database/schema.sql",
+          "hash": "17336546722477144240"
+        },
+        {
+          "file": "apps/web-dashboard/database/seed.sql",
+          "hash": "17392439821209847254"
+        },
+        {
+          "file": "apps/web-dashboard/lib/auth.ts",
+          "hash": "1249850573517346807",
+          "deps": [
+            "npm:@/types/app"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/game-requirements.ts",
+          "hash": "14857805654197836595",
+          "deps": [
+            "npm:@/types/optimization"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/http-client.ts",
+          "hash": "15850628355771344986"
+        },
+        {
+          "file": "apps/web-dashboard/lib/optimization-engine.ts",
+          "hash": "14733783970622243507",
+          "deps": [
+            "npm:@/types/optimization"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/supabase-client.ts",
+          "hash": "11081757049124297253",
+          "deps": [
+            "npm:@supabase/ssr"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/supabase-server.ts",
+          "hash": "7190046984754388339",
+          "deps": [
+            "npm:@supabase/ssr",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/supabase.ts",
+          "hash": "7667716944410796025",
+          "deps": [
+            "npm:@supabase/ssr"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/lib/system-detection.ts",
+          "hash": "7782214660216484729",
+          "deps": [
+            "npm:@/types/optimization"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/middleware.ts",
+          "hash": "18042447743248098898",
+          "deps": [
+            "npm:@supabase/ssr",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "apps/web-dashboard/next.config.js",
+          "hash": "452761322706456709"
+        },
+        {
+          "file": "apps/web-dashboard/package.json",
+          "hash": "9892389937548948998"
+        },
+        {
+          "file": "apps/web-dashboard/tailwind.config.ts",
+          "hash": "7513581381600595004",
+          "deps": [
+            "npm:tailwindcss"
+          ]
+        },
+        {
+          "file": "apps/web-dashboard/test.html",
+          "hash": "5753721855299486874"
+        },
+        {
+          "file": "apps/web-dashboard/tsconfig.json",
+          "hash": "10874345198168675504"
+        },
+        {
+          "file": "apps/web-dashboard/types/app.ts",
+          "hash": "14269025628701081953"
+        },
+        {
+          "file": "apps/web-dashboard/types/community.ts",
+          "hash": "4863822497445561410"
+        },
+        {
+          "file": "apps/web-dashboard/types/game.ts",
+          "hash": "4597358627146911831"
+        },
+        {
+          "file": "apps/web-dashboard/types/optimization.ts",
+          "hash": "4012578048428524140"
+        },
+        {
+          "file": "apps/web-dashboard/types/plugin.ts",
+          "hash": "11068459708472187760"
+        },
+        {
+          "file": "apps/web-dashboard/types/server.ts",
+          "hash": "17164205548827551620"
+        },
+        {
+          "file": "apps/web-dashboard/types/user.ts",
+          "hash": "7714860458155929079"
+        }
+      ],
+      "@homehost/shared-types": [
+        {
+          "file": "packages/shared-types/dist/api/requests.d.ts",
+          "hash": "14103798562167247862"
+        },
+        {
+          "file": "packages/shared-types/dist/api/requests.js",
+          "hash": "6444046576974533592"
+        },
+        {
+          "file": "packages/shared-types/dist/api/responses.d.ts",
+          "hash": "14129260773385673291"
+        },
+        {
+          "file": "packages/shared-types/dist/api/responses.js",
+          "hash": "8754458256558183521"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/app.d.ts",
+          "hash": "4801554725668847356"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/app.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/community.d.ts",
+          "hash": "1622556503571454036"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/community.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/game.d.ts",
+          "hash": "14324438909889374747"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/game.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/plugin.d.ts",
+          "hash": "14484166845677932806"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/plugin.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/server.d.ts",
+          "hash": "3106097525382600252"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/server.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/user.d.ts",
+          "hash": "16701463932375049315"
+        },
+        {
+          "file": "packages/shared-types/dist/domain/user.js",
+          "hash": "10533815908077531553"
+        },
+        {
+          "file": "packages/shared-types/dist/events/server-events.d.ts",
+          "hash": "16477119161145612689"
+        },
+        {
+          "file": "packages/shared-types/dist/events/server-events.js",
+          "hash": "2888813598733460014"
+        },
+        {
+          "file": "packages/shared-types/dist/events/sync-events.d.ts",
+          "hash": "188117966098407580"
+        },
+        {
+          "file": "packages/shared-types/dist/events/sync-events.js",
+          "hash": "10924130229838797116"
+        },
+        {
+          "file": "packages/shared-types/dist/index.d.ts",
+          "hash": "7852669625630108666"
+        },
+        {
+          "file": "packages/shared-types/dist/index.js",
+          "hash": "12577938918341572106"
+        },
+        {
+          "file": "packages/shared-types/package.json",
+          "hash": "1612186615210665576"
+        },
+        {
+          "file": "packages/shared-types/src/api/requests.ts",
+          "hash": "47498183632265213"
+        },
+        {
+          "file": "packages/shared-types/src/api/responses.ts",
+          "hash": "17994312325866989560"
+        },
+        {
+          "file": "packages/shared-types/src/domain/app.ts",
+          "hash": "14269025628701081953"
+        },
+        {
+          "file": "packages/shared-types/src/domain/community.ts",
+          "hash": "4863822497445561410"
+        },
+        {
+          "file": "packages/shared-types/src/domain/game.ts",
+          "hash": "4597358627146911831"
+        },
+        {
+          "file": "packages/shared-types/src/domain/plugin.ts",
+          "hash": "11068459708472187760"
+        },
+        {
+          "file": "packages/shared-types/src/domain/server.ts",
+          "hash": "17164205548827551620"
+        },
+        {
+          "file": "packages/shared-types/src/domain/user.ts",
+          "hash": "7714860458155929079"
+        },
+        {
+          "file": "packages/shared-types/src/events/server-events.ts",
+          "hash": "11207784776484335869"
+        },
+        {
+          "file": "packages/shared-types/src/events/sync-events.ts",
+          "hash": "1532908002111673037"
+        },
+        {
+          "file": "packages/shared-types/src/index.ts",
+          "hash": "8043661729388021440"
+        },
+        {
+          "file": "packages/shared-types/tsconfig.json",
+          "hash": "16961795335606008650"
+        }
+      ]
+    }
+  }
+}

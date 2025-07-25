@@ -1,0 +1,23 @@
+{
+  "pluginId": "discord-bridge-ultimate",
+  "createdAt": "2025-07-12T21:40:42.640Z",
+  "securityConfig": {
+    "maxMemoryMB": 256,
+    "maxCpuPercent": 25,
+    "maxFileSize": 104857600,
+    "allowedPaths": [
+      "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data"
+    ],
+    "blockedNetworkHosts": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "maxNetworkConnections": 10,
+    "executionTimeout": 30000
+  },
+  "allowedPaths": [
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-sandboxes/discord-bridge-ultimate",
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data",
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data/discord-bridge-ultimate"
+  ]
+}

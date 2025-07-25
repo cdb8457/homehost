@@ -1,0 +1,952 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Management
+model User {
+  id              String    @id @default(uuid())
+  email           String    @unique
+  username        String    @unique
+  password        String
+  firstName       String?
+  lastName        String?
+  avatarUrl       String?
+  emailVerified   Boolean   @default(false)
+  isActive        Boolean   @default(true)
+  role            UserRole  @default(USER)
+  lastLoginAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  // User profile and settings
+  profile         UserProfile?
+  preferences     UserPreferences?
+  sessions        UserSession[]
+
+  // Relationships
+  ownedServers    Server[]              @relation("ServerOwner")
+  memberServers   ServerMember[]
+  communities     CommunityMember[]
+  posts           CommunityPost[]
+  comments        PostComment[]
+  friendships     Friendship[]          @relation("FriendshipRequester")
+  friendRequests  Friendship[]          @relation("FriendshipAddressee")
+  badges          UserBadge[]
+  reputation      UserReputation[]
+  eventParticipation EventParticipant[]
+  messages        SocialMessage[]       @relation("MessageSender")
+  receivedMessages SocialMessage[]      @relation("MessageRecipient")
+  notifications   Notification[]
+  auditLogs       AuditLog[]
+  
+  // Monitoring and alerts
+  alertRules      AlertRule[]
+  acknowledgedAlerts Alert[]           @relation("AlertAcknowledger")
+  resolvedAlerts  Alert[]             @relation("AlertResolver")
+  
+  // Configuration management
+  configurations  ServerConfiguration[]
+  deployments     ConfigDeployment[]
+
+  @@map("users")
+}
+
+model UserProfile {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  bio         String?
+  location    String?
+  website     String?
+  discord     String?
+  twitter     String?
+  twitch      String?
+  youtube     String?
+  steam       String?
+  timezone    String?
+  language    String?  @default("en")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+model UserPreferences {
+  id                  String   @id @default(uuid())
+  userId              String   @unique
+  theme               String   @default("dark")
+  emailNotifications  Boolean  @default(true)
+  pushNotifications   Boolean  @default(true)
+  showOnlineStatus    Boolean  @default(true)
+  allowFriendRequests Boolean  @default(true)
+  showGameActivity    Boolean  @default(true)
+  language            String   @default("en")
+  timezone            String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_preferences")
+}
+
+model UserSession {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  userAgent String?
+  ipAddress String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_sessions")
+}
+
+enum UserRole {
+  USER
+  MODERATOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+// Server Management
+model Server {
+  id              String        @id @default(uuid())
+  name            String
+  description     String?
+  gameType        String
+  gameVersion     String?
+  ownerId         String
+  region          String
+  maxPlayers      Int           @default(20)
+  isOnline        Boolean       @default(false)
+  isPublic        Boolean       @default(true)
+  tags            String[]
+  
+  // Server configuration
+  port            Int?
+  rconPort        Int?
+  rconPassword    String?
+  
+  // Performance metrics
+  currentPlayers  Int           @default(0)
+  uptime          BigInt        @default(0)
+  lastRestart     DateTime?
+  
+  // Metadata
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  lastActivity    DateTime      @default(now())
+
+  // Relationships
+  owner           User                    @relation("ServerOwner", fields: [ownerId], references: [id])
+  members         ServerMember[]
+  metrics         ServerMetrics[]
+  alerts          Alert[]
+  configurations  ServerConfiguration[]
+  deployments     ConfigDeployment[]
+  plugins         ServerPlugin[]
+  backups         ServerBackup[]
+  community       Community?
+  
+  @@map("servers")
+}
+
+model ServerMember {
+  id        String          @id @default(uuid())
+  serverId  String
+  userId    String
+  role      ServerRole      @default(MEMBER)
+  joinedAt  DateTime        @default(now())
+  lastSeen  DateTime        @default(now())
+  isOnline  Boolean         @default(false)
+  
+  // Player stats
+  playTime  BigInt          @default(0)
+  
+  server    Server          @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([serverId, userId])
+  @@map("server_members")
+}
+
+enum ServerRole {
+  MEMBER
+  VIP
+  MODERATOR
+  ADMIN
+  OWNER
+}
+
+// Server Monitoring
+model ServerMetrics {
+  id              String   @id @default(uuid())
+  serverId        String
+  timestamp       DateTime @default(now())
+  
+  // System metrics
+  cpuUsage        Float
+  memoryUsage     Float
+  memoryTotal     BigInt
+  diskUsage       Float
+  diskTotal       BigInt
+  networkIn       BigInt
+  networkOut      BigInt
+  
+  // Game metrics
+  playerCount     Int
+  tps             Float?
+  mspt            Float?
+  chunkCount      Int?
+  entityCount     Int?
+  
+  // Custom metrics (JSON)
+  customMetrics   Json?
+
+  server          Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+
+  @@index([serverId, timestamp])
+  @@map("server_metrics")
+}
+
+// Alert System
+model Alert {
+  id              String      @id @default(uuid())
+  serverId        String
+  ruleId          String
+  severity        AlertSeverity
+  status          AlertStatus @default(ACTIVE)
+  title           String
+  description     String
+  metric          String
+  threshold       Float
+  currentValue    Float
+  triggeredAt     DateTime    @default(now())
+  acknowledgedAt  DateTime?
+  acknowledgedBy  String?
+  resolvedAt      DateTime?
+  resolvedBy      String?
+  escalationLevel Int         @default(0)
+  metadata        Json?
+
+  server          Server      @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  rule            AlertRule   @relation(fields: [ruleId], references: [id])
+  acknowledger    User?       @relation("AlertAcknowledger", fields: [acknowledgedBy], references: [id])
+  resolver        User?       @relation("AlertResolver", fields: [resolvedBy], references: [id])
+  notifications   AlertNotification[]
+
+  @@index([serverId, status])
+  @@index([triggeredAt])
+  @@map("alerts")
+}
+
+model AlertRule {
+  id              String        @id @default(uuid())
+  name            String
+  description     String
+  serverId        String?       // null for global rules
+  metric          String
+  operator        String        // gt, gte, lt, lte, eq, ne
+  threshold       Float
+  duration        Int           // seconds
+  cooldown        Int           // seconds
+  severity        AlertSeverity
+  enabled         Boolean       @default(true)
+  tags            String[]
+  
+  // Notification configuration (JSON)
+  notificationConfig Json?
+  
+  createdBy       String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  creator         User          @relation(fields: [createdBy], references: [id])
+  alerts          Alert[]
+
+  @@map("alert_rules")
+}
+
+model AlertNotification {
+  id          String                  @id @default(uuid())
+  alertId     String
+  channel     NotificationChannel
+  status      NotificationStatus      @default(PENDING)
+  sentAt      DateTime?
+  deliveredAt DateTime?
+  error       String?
+  retryCount  Int                     @default(0)
+
+  alert       Alert                   @relation(fields: [alertId], references: [id], onDelete: Cascade)
+
+  @@map("alert_notifications")
+}
+
+enum AlertSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AlertStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  RESOLVED
+  SUPPRESSED
+}
+
+enum NotificationChannel {
+  EMAIL
+  DISCORD
+  SLACK
+  WEBHOOK
+  SMS
+  PUSH
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  DELIVERED
+  FAILED
+}
+
+// Configuration Management
+model ServerConfiguration {
+  id              String              @id @default(uuid())
+  serverId        String
+  name            String
+  description     String
+  version         Int                 @default(1)
+  status          ConfigStatus        @default(DRAFT)
+  config          Json                // Complete server configuration
+  templateId      String?
+  validationResult Json?              // Validation errors/warnings
+  
+  createdBy       String
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  server          Server              @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  creator         User                @relation(fields: [createdBy], references: [id])
+  template        ConfigTemplate?     @relation(fields: [templateId], references: [id])
+  deployments     ConfigDeployment[]
+
+  @@map("server_configurations")
+}
+
+model ConfigTemplate {
+  id              String              @id @default(uuid())
+  name            String
+  description     String
+  category        String
+  version         String
+  config          Json                // Template configuration
+  variables       Json                // Template variables definition
+  isPublic        Boolean             @default(false)
+  downloads       Int                 @default(0)
+  rating          Float?
+  tags            String[]
+  
+  createdBy       String
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  creator         User                @relation(fields: [createdBy], references: [id])
+  configurations  ServerConfiguration[]
+
+  @@map("config_templates")
+}
+
+model ConfigDeployment {
+  id              String              @id @default(uuid())
+  serverId        String
+  configId        String
+  status          DeploymentStatus    @default(PENDING)
+  deployedBy      String
+  deployedAt      DateTime?
+  rollbackVersion Int?
+  changes         Json?               // List of configuration changes
+  deploymentLog   Json?               // Deployment execution log
+  
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  server          Server              @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  configuration   ServerConfiguration @relation(fields: [configId], references: [id])
+  deployer        User                @relation(fields: [deployedBy], references: [id])
+
+  @@map("config_deployments")
+}
+
+enum ConfigStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum DeploymentStatus {
+  PENDING
+  DEPLOYING
+  DEPLOYED
+  FAILED
+  ROLLBACK
+}
+
+// Plugin System
+model Plugin {
+  id              String          @id @default(uuid())
+  name            String          @unique
+  displayName     String
+  description     String
+  version         String
+  author          String
+  category        String
+  tags            String[]
+  downloadUrl     String
+  fileSize        BigInt
+  checksum        String
+  
+  // Marketplace info
+  price           Float           @default(0)
+  isPremium       Boolean         @default(false)
+  isVerified      Boolean         @default(false)
+  rating          Float?
+  downloads       Int             @default(0)
+  
+  // Dependencies and compatibility
+  gameVersions    String[]
+  dependencies    Json?           // Plugin dependencies
+  conflicts       String[]        // Conflicting plugins
+  
+  // Metadata
+  readme          String?
+  changelog       String?
+  supportUrl      String?
+  sourceUrl       String?
+  
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  publishedAt     DateTime?
+
+  // Relationships
+  versions        PluginVersion[]
+  serverPlugins   ServerPlugin[]
+  reviews         PluginReview[]
+
+  @@map("plugins")
+}
+
+model PluginVersion {
+  id              String          @id @default(uuid())
+  pluginId        String
+  version         String
+  downloadUrl     String
+  fileSize        BigInt
+  checksum        String
+  changelog       String?
+  isStable        Boolean         @default(true)
+  gameVersions    String[]
+  
+  createdAt       DateTime        @default(now())
+
+  plugin          Plugin          @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+
+  @@unique([pluginId, version])
+  @@map("plugin_versions")
+}
+
+model ServerPlugin {
+  id              String          @id @default(uuid())
+  serverId        String
+  pluginId        String
+  version         String
+  enabled         Boolean         @default(true)
+  config          Json?           // Plugin-specific configuration
+  autoUpdate      Boolean         @default(false)
+  
+  installedAt     DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  server          Server          @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  plugin          Plugin          @relation(fields: [pluginId], references: [id])
+
+  @@unique([serverId, pluginId])
+  @@map("server_plugins")
+}
+
+model PluginReview {
+  id              String          @id @default(uuid())
+  pluginId        String
+  userId          String
+  rating          Int             // 1-5
+  comment         String?
+  version         String
+  
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  plugin          Plugin          @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([pluginId, userId])
+  @@map("plugin_reviews")
+}
+
+// Community Features
+model Community {
+  id              String            @id @default(uuid())
+  serverId        String            @unique
+  name            String
+  description     String
+  banner          String?
+  logo            String?
+  primaryColor    String?
+  secondaryColor  String?
+  isPublic        Boolean           @default(true)
+  joinType        CommunityJoinType @default(OPEN)
+  rules           String[]
+  welcomeMessage  String?
+  
+  // Social features
+  allowPosts      Boolean           @default(true)
+  allowEvents     Boolean           @default(true)
+  moderationLevel String            @default("moderate")
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  server          Server            @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  members         CommunityMember[]
+  posts           CommunityPost[]
+  events          CommunityEvent[]
+
+  @@map("communities")
+}
+
+model CommunityMember {
+  id              String          @id @default(uuid())
+  communityId     String
+  userId          String
+  role            CommunityRole   @default(MEMBER)
+  joinedAt        DateTime        @default(now())
+  reputation      Int             @default(0)
+  
+  community       Community       @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([communityId, userId])
+  @@map("community_members")
+}
+
+model CommunityPost {
+  id              String          @id @default(uuid())
+  communityId     String
+  authorId        String
+  title           String?
+  content         String
+  postType        PostType        @default(TEXT)
+  mediaUrls       String[]
+  tags            String[]
+  isPinned        Boolean         @default(false)
+  isLocked        Boolean         @default(false)
+  
+  // Engagement
+  likes           Int             @default(0)
+  shares          Int             @default(0)
+  
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  community       Community       @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  author          User            @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  comments        PostComment[]
+  reactions       PostReaction[]
+
+  @@index([communityId, createdAt])
+  @@map("community_posts")
+}
+
+model PostComment {
+  id              String          @id @default(uuid())
+  postId          String
+  authorId        String
+  content         String
+  parentId        String?         // For nested comments
+  likes           Int             @default(0)
+  
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  post            CommunityPost   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author          User            @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parent          PostComment?    @relation("CommentReplies", fields: [parentId], references: [id])
+  replies         PostComment[]   @relation("CommentReplies")
+
+  @@index([postId])
+  @@map("post_comments")
+}
+
+model PostReaction {
+  id              String          @id @default(uuid())
+  postId          String
+  userId          String
+  type            ReactionType
+
+  post            CommunityPost   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, userId, type])
+  @@map("post_reactions")
+}
+
+// Events and Social Features
+model CommunityEvent {
+  id              String            @id @default(uuid())
+  communityId     String
+  creatorId       String
+  title           String
+  description     String
+  eventType       EventType         @default(COMMUNITY)
+  startTime       DateTime
+  endTime         DateTime
+  location        EventLocation     @default(SERVER)
+  maxParticipants Int?
+  registrationRequired Boolean      @default(false)
+  registrationDeadline DateTime?
+  rules           String?
+  prizes          Json?             // Event prizes configuration
+  
+  status          EventStatus       @default(UPCOMING)
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  community       Community         @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  creator         User              @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  participants    EventParticipant[]
+
+  @@map("community_events")
+}
+
+model EventParticipant {
+  id              String          @id @default(uuid())
+  eventId         String
+  userId          String
+  status          ParticipantStatus @default(REGISTERED)
+  registeredAt    DateTime        @default(now())
+  team            String?
+  notes           String?
+
+  event           CommunityEvent  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([eventId, userId])
+  @@map("event_participants")
+}
+
+model Badge {
+  id              String          @id @default(uuid())
+  name            String          @unique
+  description     String
+  iconUrl         String
+  category        BadgeCategory
+  rarity          BadgeRarity
+  requirements    Json?           // Badge requirements
+  isActive        Boolean         @default(true)
+  
+  createdAt       DateTime        @default(now())
+
+  userBadges      UserBadge[]
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id              String          @id @default(uuid())
+  userId          String
+  badgeId         String
+  earnedAt        DateTime        @default(now())
+  progress        Json?           // Progress toward badge completion
+
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge           Badge           @relation(fields: [badgeId], references: [id])
+
+  @@unique([userId, badgeId])
+  @@map("user_badges")
+}
+
+model UserReputation {
+  id              String          @id @default(uuid())
+  userId          String
+  serverId        String
+  score           Int             @default(0)
+  positiveRatings Int             @default(0)
+  negativeRatings Int             @default(0)
+  
+  // Category scores
+  helpfulness     Int             @default(0)
+  friendliness    Int             @default(0)
+  skillLevel      Int             @default(0)
+  reliability     Int             @default(0)
+  leadership      Int             @default(0)
+  
+  lastUpdated     DateTime        @default(now())
+
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, serverId])
+  @@map("user_reputation")
+}
+
+model Friendship {
+  id              String            @id @default(uuid())
+  requesterId     String
+  addresseeId     String
+  status          FriendshipStatus  @default(PENDING)
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  requester       User              @relation("FriendshipRequester", fields: [requesterId], references: [id], onDelete: Cascade)
+  addressee       User              @relation("FriendshipAddressee", fields: [addresseeId], references: [id], onDelete: Cascade)
+
+  @@unique([requesterId, addresseeId])
+  @@map("friendships")
+}
+
+model SocialMessage {
+  id              String          @id @default(uuid())
+  senderId        String
+  recipientId     String
+  content         String
+  messageType     MessageType     @default(TEXT)
+  attachments     String[]        // URLs to attachments
+  replyToId       String?
+  isRead          Boolean         @default(false)
+  editedAt        DateTime?
+  
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  sender          User            @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  recipient       User            @relation("MessageRecipient", fields: [recipientId], references: [id], onDelete: Cascade)
+  replyTo         SocialMessage?  @relation("MessageReplies", fields: [replyToId], references: [id])
+  replies         SocialMessage[] @relation("MessageReplies")
+
+  @@index([senderId, recipientId])
+  @@map("social_messages")
+}
+
+// Backup and Recovery
+model ServerBackup {
+  id              String          @id @default(uuid())
+  serverId        String
+  name            String
+  type            BackupType
+  size            BigInt
+  location        String          // Storage location/path
+  compression     Boolean         @default(true)
+  status          BackupStatus    @default(PENDING)
+  
+  // Metadata
+  worldSize       BigInt?
+  playerData      Boolean         @default(true)
+  plugins         Boolean         @default(true)
+  configuration   Boolean         @default(true)
+  
+  startedAt       DateTime        @default(now())
+  completedAt     DateTime?
+  expiresAt       DateTime?
+  
+  server          Server          @relation(fields: [serverId], references: [id], onDelete: Cascade)
+
+  @@index([serverId, createdAt])
+  @@map("server_backups")
+}
+
+// Notifications
+model Notification {
+  id              String            @id @default(uuid())
+  userId          String
+  type            NotificationType
+  title           String
+  message         String
+  data            Json?             // Additional notification data
+  isRead          Boolean           @default(false)
+  
+  createdAt       DateTime          @default(now())
+
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+// Audit Logging
+model AuditLog {
+  id              String          @id @default(uuid())
+  userId          String?
+  action          String
+  resource        String
+  resourceId      String?
+  details         Json?
+  ipAddress       String?
+  userAgent       String?
+  
+  createdAt       DateTime        @default(now())
+
+  user            User?           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([resource, resourceId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// Enums
+enum CommunityJoinType {
+  OPEN
+  APPLICATION
+  INVITE_ONLY
+}
+
+enum CommunityRole {
+  MEMBER
+  MODERATOR
+  ADMIN
+  OWNER
+}
+
+enum PostType {
+  TEXT
+  IMAGE
+  VIDEO
+  POLL
+  ACHIEVEMENT
+  EVENT
+}
+
+enum ReactionType {
+  LIKE
+  LOVE
+  LAUGH
+  ANGRY
+  SAD
+}
+
+enum EventType {
+  TOURNAMENT
+  COMMUNITY
+  BUILDING
+  PVP
+  SOCIAL
+  EDUCATIONAL
+}
+
+enum EventLocation {
+  SERVER
+  DISCORD
+  EXTERNAL
+}
+
+enum EventStatus {
+  UPCOMING
+  REGISTRATION_OPEN
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ParticipantStatus {
+  REGISTERED
+  CONFIRMED
+  PARTICIPATED
+  WITHDREW
+}
+
+enum BadgeCategory {
+  ACHIEVEMENT
+  MILESTONE
+  EVENT
+  SPECIAL
+}
+
+enum BadgeRarity {
+  COMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+enum FriendshipStatus {
+  PENDING
+  ACCEPTED
+  BLOCKED
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  FILE
+  SYSTEM
+}
+
+enum BackupType {
+  FULL
+  INCREMENTAL
+  DIFFERENTIAL
+}
+
+enum BackupStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum NotificationType {
+  SYSTEM
+  FRIEND_REQUEST
+  MESSAGE
+  ALERT
+  EVENT
+  ACHIEVEMENT
+  COMMUNITY
+}
+
+model ConfigTemplate {
+  id              String              @id @default(uuid())
+  name            String
+  description     String
+  category        String
+  version         String
+  config          Json                // Template configuration
+  variables       Json                // Template variables definition
+  isPublic        Boolean             @default(false)
+  downloads       Int                 @default(0)
+  rating          Float?
+  tags            String[]
+  
+  createdBy       String
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  creator         User                @relation(fields: [createdBy], references: [id])
+  configurations  ServerConfiguration[]
+
+  @@map("config_templates")
+}

@@ -1,0 +1,185 @@
+{
+  "name": "production",
+  "displayName": "Production",
+  "description": "Production environment",
+  
+  "deployment": {
+    "buildScript": "npm run build",
+    "outputDir": "build",
+    "deploymentPath": "./dist/production",
+    "healthCheckUrl": "https://api.homehost.io:3456",
+    "backupEnabled": true,
+    "autoRestart": true,
+    "requireApproval": true,
+    "rollbackStrategy": "automatic",
+    "maxRollbackAttempts": 3,
+    "maintenanceMode": false
+  },
+  
+  "build": {
+    "timeout": 900000,
+    "retryAttempts": 3,
+    "cleanBefore": true,
+    "runTests": true,
+    "runLinting": true,
+    "runTypecheck": true,
+    "testScript": "npm test -- --coverage --watchAll=false --testPathIgnorePatterns=/node_modules/",
+    "lintScript": "npm run lint",
+    "typecheckScript": "npm run typecheck",
+    "optimization": {
+      "minify": true,
+      "treeshaking": true,
+      "bundleAnalysis": true
+    }
+  },
+  
+  "healthCheck": {
+    "timeout": 60000,
+    "retryAttempts": 10,
+    "retryDelay": 10000,
+    "endpoints": [
+      "/health",
+      "/api/status",
+      "/security/status",
+      "/performance/metrics"
+    ],
+    "criticalEndpoints": ["/health"],
+    "gracePeriod": 120000
+  },
+  
+  "backup": {
+    "enabled": true,
+    "retentionDays": 90,
+    "compressionEnabled": true,
+    "incrementalBackups": true,
+    "encryptionEnabled": true,
+    "offSiteBackup": true,
+    "schedule": "0 2 * * *"
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "alertOnFailure": true,
+    "logLevel": "warn",
+    "metricsCollection": true,
+    "uptime": {
+      "enabled": true,
+      "interval": 30000
+    }
+  },
+  
+  "features": {
+    "hotReload": false,
+    "devTools": false,
+    "mockServices": false,
+    "debugMode": false,
+    "productionOptimizations": true
+  },
+  
+  "database": {
+    "type": "sqlite",
+    "filename": "homehost-production.db",
+    "logging": false,
+    "backupEnabled": true,
+    "replication": {
+      "enabled": false,
+      "slaves": []
+    },
+    "encryption": {
+      "enabled": true,
+      "algorithm": "AES-256-GCM"
+    }
+  },
+  
+  "security": {
+    "strictMode": true,
+    "corsEnabled": true,
+    "allowedOrigins": ["https://homehost.io", "https://app.homehost.io"],
+    "rateLimiting": {
+      "enabled": true,
+      "windowMs": 900000,
+      "maxRequests": 500,
+      "ddosProtection": true
+    },
+    "audit": {
+      "enabled": true,
+      "logAllRequests": true,
+      "suspiciousActivity": true
+    },
+    "ssl": {
+      "enabled": true,
+      "enforceHttps": true,
+      "certPath": "/etc/ssl/certs/homehost.crt",
+      "keyPath": "/etc/ssl/private/homehost.key"
+    }
+  },
+  
+  "performance": {
+    "monitoring": {
+      "enabled": true,
+      "detailed": true,
+      "alerts": true,
+      "thresholds": {
+        "cpu": { "warning": 60, "critical": 75 },
+        "memory": { "warning": 70, "critical": 85 },
+        "eventLoop": { "warning": 50, "critical": 100 },
+        "responseTime": { "warning": 1000, "critical": 3000 }
+      }
+    },
+    "optimization": {
+      "enabled": true,
+      "autoApply": false,
+      "caching": true,
+      "compression": true
+    }
+  },
+  
+  "notifications": {
+    "slack": {
+      "enabled": true,
+      "webhook": "${SLACK_WEBHOOK_URL}",
+      "channels": ["#production-alerts", "#deployments"],
+      "mentionOnCritical": true
+    },
+    "email": {
+      "enabled": true,
+      "smtp": {
+        "host": "smtp.homehost.io",
+        "port": 587,
+        "secure": true,
+        "auth": {
+          "user": "${SMTP_USER}",
+          "pass": "${SMTP_PASS}"
+        }
+      },
+      "recipients": ["ops@homehost.io", "alerts@homehost.io"]
+    },
+    "pagerduty": {
+      "enabled": true,
+      "apiKey": "${PAGERDUTY_API_KEY}",
+      "serviceKey": "${PAGERDUTY_SERVICE_KEY}"
+    }
+  },
+  
+  "compliance": {
+    "logging": {
+      "auditTrail": true,
+      "retention": "7 years",
+      "encryption": true
+    },
+    "gdpr": {
+      "enabled": true,
+      "dataRetention": "2 years",
+      "rightToErasure": true
+    }
+  },
+  
+  "scaling": {
+    "autoScaling": false,
+    "maxInstances": 1,
+    "loadBalancer": {
+      "enabled": false,
+      "algorithm": "round-robin"
+    }
+  }
+}

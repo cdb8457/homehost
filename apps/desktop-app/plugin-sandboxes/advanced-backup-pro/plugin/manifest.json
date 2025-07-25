@@ -1,0 +1,16 @@
+{
+  "id": "advanced-backup-pro",
+  "name": "Advanced Backup Pro",
+  "version": "2.1.0",
+  "category": "quality-of-life",
+  "developer": "BackupSolutions",
+  "main": "index.js",
+  "permissions": [],
+  "supportedGames": [
+    "*"
+  ],
+  "configuration": {
+    "enabled": true,
+    "autoStart": true
+  }
+}

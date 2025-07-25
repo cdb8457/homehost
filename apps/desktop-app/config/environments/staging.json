@@ -1,0 +1,106 @@
+{
+  "name": "staging",
+  "displayName": "Staging",
+  "description": "Pre-production staging environment",
+  
+  "deployment": {
+    "buildScript": "npm run build",
+    "outputDir": "build",
+    "deploymentPath": "./dist/staging",
+    "healthCheckUrl": "http://staging.homehost.local:3456",
+    "backupEnabled": true,
+    "autoRestart": true,
+    "requireApproval": false,
+    "rollbackStrategy": "manual"
+  },
+  
+  "build": {
+    "timeout": 600000,
+    "retryAttempts": 2,
+    "cleanBefore": true,
+    "runTests": true,
+    "runLinting": true,
+    "runTypecheck": true,
+    "testScript": "npm test -- --coverage --watchAll=false",
+    "lintScript": "npm run lint",
+    "typecheckScript": "npm run typecheck"
+  },
+  
+  "healthCheck": {
+    "timeout": 30000,
+    "retryAttempts": 5,
+    "retryDelay": 5000,
+    "endpoints": [
+      "/health",
+      "/api/status",
+      "/security/status"
+    ]
+  },
+  
+  "backup": {
+    "enabled": true,
+    "retentionDays": 14,
+    "compressionEnabled": true,
+    "incrementalBackups": true
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "alertOnFailure": true,
+    "logLevel": "info",
+    "metricsCollection": true
+  },
+  
+  "features": {
+    "hotReload": false,
+    "devTools": false,
+    "mockServices": false,
+    "debugMode": false
+  },
+  
+  "database": {
+    "type": "sqlite",
+    "filename": "homehost-staging.db",
+    "logging": false,
+    "backupEnabled": true
+  },
+  
+  "security": {
+    "strictMode": true,
+    "corsEnabled": true,
+    "allowedOrigins": ["https://staging.homehost.local"],
+    "rateLimiting": {
+      "enabled": true,
+      "windowMs": 900000,
+      "maxRequests": 1000
+    },
+    "audit": {
+      "enabled": true,
+      "logAllRequests": true
+    }
+  },
+  
+  "performance": {
+    "monitoring": {
+      "enabled": true,
+      "detailed": true,
+      "alerts": true,
+      "thresholds": {
+        "cpu": { "warning": 70, "critical": 85 },
+        "memory": { "warning": 80, "critical": 90 }
+      }
+    }
+  },
+  
+  "notifications": {
+    "slack": {
+      "enabled": false,
+      "webhook": null,
+      "channels": ["#staging-deployments"]
+    },
+    "email": {
+      "enabled": false,
+      "recipients": ["dev-team@homehost.local"]
+    }
+  }
+}

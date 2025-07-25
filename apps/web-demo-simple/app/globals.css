@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Override to ensure text is visible on light backgrounds */
+input, textarea, button {
+  color: inherit;
+}
+
+/* Ensure input text is always visible */
+input[type="text"], 
+input[type="email"], 
+input[type="password"],
+textarea {
+  color: #1f2937 !important;
+}
+
+/* Fix button text visibility */
+button {
+  color: inherit;
+}
+
+/* Specific button text fixes */
+button:not(.bg-indigo-600):not(.bg-purple-600):not(.bg-red-600) {
+  color: #1f2937 !important;
+}
+
+/* Ensure colored buttons keep their text color */
+button.bg-indigo-600,
+button.bg-purple-600,
+button.bg-red-600,
+.bg-indigo-600,
+.bg-purple-600,
+.bg-red-600 {
+  color: white !important;
+}
+
+/* Game selection buttons and similar interactive elements */
+button[type="button"] {
+  color: #1f2937 !important;
+}
+
+/* Selected state buttons */
+button.border-indigo-500,
+button.bg-indigo-50 {
+  color: #1e40af !important;
+}
+
+button.border-purple-500,
+button.bg-purple-50 {
+  color: #7c3aed !important;
+}
+
+/* Ensure proper text color for form elements */
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+/* Fix text in various button states */
+.border-gray-200,
+.border-gray-300 {
+  color: #1f2937 !important;
+}
+
+/* Fix unselected game button text visibility */
+button.border-gray-200:not(.bg-indigo-50):not(.bg-purple-50) {
+  color: #1f2937 !important;
+}
+
+/* Ensure hover states are visible too */
+button:hover:not(.bg-indigo-600):not(.bg-purple-600):not(.bg-red-600) {
+  color: #1f2937 !important;
+}
+
+/* Ensure all text content is visible */
+div, span, p, h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+}
+
+/* Fix specifically for button content */
+button * {
+  color: inherit !important;
+}
+
+/* Force all button text to be visible - aggressive fix */
+button {
+  color: #1f2937 !important;
+}
+
+/* Override for colored buttons */
+button.bg-indigo-600,
+button.bg-purple-600,
+button.bg-red-600,
+button.bg-blue-600,
+button.bg-green-600,
+.bg-indigo-600 button,
+.bg-purple-600 button,
+.bg-red-600 button {
+  color: white !important;
+}
+
+/* Ensure game selection buttons are always visible */
+button.border-gray-200,
+button.border-gray-300 {
+  color: #1f2937 !important;
+}
+
+/* Selected state colors */
+button.border-indigo-500.bg-indigo-50,
+button.border-purple-500.bg-purple-50 {
+  color: #1e40af !important;
+}
+

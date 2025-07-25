@@ -1,0 +1,67 @@
+{
+  "name": "development",
+  "displayName": "Development",
+  "description": "Local development environment",
+  
+  "deployment": {
+    "buildScript": "npm run build",
+    "outputDir": "build",
+    "deploymentPath": "./dist/dev",
+    "healthCheckUrl": "http://localhost:3456",
+    "backupEnabled": false,
+    "autoRestart": true,
+    "requireApproval": false
+  },
+  
+  "build": {
+    "timeout": 300000,
+    "retryAttempts": 1,
+    "cleanBefore": true,
+    "runTests": false,
+    "runLinting": false,
+    "runTypecheck": false
+  },
+  
+  "healthCheck": {
+    "timeout": 10000,
+    "retryAttempts": 3,
+    "retryDelay": 2000,
+    "endpoints": ["/health"]
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "alertOnFailure": false,
+    "logLevel": "debug"
+  },
+  
+  "features": {
+    "hotReload": true,
+    "devTools": true,
+    "mockServices": true,
+    "debugMode": true
+  },
+  
+  "database": {
+    "type": "sqlite",
+    "filename": "homehost-dev.db",
+    "logging": true
+  },
+  
+  "security": {
+    "strictMode": false,
+    "corsEnabled": true,
+    "allowedOrigins": ["http://localhost:3000", "http://localhost:3012"],
+    "rateLimiting": {
+      "enabled": false
+    }
+  },
+  
+  "performance": {
+    "monitoring": {
+      "enabled": true,
+      "detailed": true,
+      "alerts": false
+    }
+  }
+}

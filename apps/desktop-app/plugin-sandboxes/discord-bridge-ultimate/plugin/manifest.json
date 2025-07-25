@@ -1,0 +1,18 @@
+{
+  "id": "discord-bridge-ultimate",
+  "name": "Discord Bridge Ultimate",
+  "version": "3.0.1",
+  "category": "community-features",
+  "developer": "CommunityTools",
+  "main": "index.js",
+  "permissions": [],
+  "supportedGames": [
+    "valheim",
+    "rust",
+    "cs2"
+  ],
+  "configuration": {
+    "enabled": true,
+    "autoStart": true
+  }
+}

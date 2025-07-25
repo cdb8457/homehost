@@ -1,0 +1,160 @@
+/* RealTimeStatus Component Styles */
+
+.real-time-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.real-time-status.clickable {
+  cursor: pointer;
+}
+
+.real-time-status.clickable:hover {
+  border-color: var(--primary-color);
+  background: var(--hover-color);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-connected {
+  background: var(--success-color, #10b981);
+}
+
+.status-connecting {
+  background: var(--warning-color, #f59e0b);
+}
+
+.status-disconnected {
+  background: var(--error-color, #ef4444);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 40px;
+}
+
+.server-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.server-count {
+  font-size: 12px;
+}
+
+.running-indicator {
+  color: var(--success-color, #10b981);
+  font-size: 8px;
+}
+
+.connection-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.uptime,
+.latency {
+  background: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.last-update {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+/* Compact variant */
+.real-time-status.compact {
+  padding: 4px 8px;
+  gap: 8px;
+}
+
+.real-time-status.compact .status-text {
+  font-size: 11px;
+  min-width: auto;
+}
+
+.real-time-status.compact .connection-details {
+  display: none;
+}
+
+/* Header variant */
+.real-time-status.header {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.real-time-status.header .status-indicator {
+  gap: 4px;
+}
+
+.real-time-status.header .status-dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .real-time-status {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .connection-details {
+    display: none;
+  }
+  
+  .last-update {
+    display: none;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-color: #1f2937;
+    --bg-secondary: #111827;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+    --hover-color: #374151;
+    --primary-color: #3b82f6;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --success-color: #10b981;
+  }
+}

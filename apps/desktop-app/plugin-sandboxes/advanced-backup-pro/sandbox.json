@@ -1,0 +1,23 @@
+{
+  "pluginId": "advanced-backup-pro",
+  "createdAt": "2025-07-12T21:40:42.864Z",
+  "securityConfig": {
+    "maxMemoryMB": 256,
+    "maxCpuPercent": 25,
+    "maxFileSize": 104857600,
+    "allowedPaths": [
+      "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data"
+    ],
+    "blockedNetworkHosts": [
+      "localhost",
+      "127.0.0.1"
+    ],
+    "maxNetworkConnections": 10,
+    "executionTimeout": 30000
+  },
+  "allowedPaths": [
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-sandboxes/advanced-backup-pro",
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data",
+    "/mnt/host/c/NewProject Fresh/apps/desktop-app/plugin-data/advanced-backup-pro"
+  ]
+}

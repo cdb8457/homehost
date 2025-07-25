@@ -1,0 +1,19 @@
+
+> @homehost/shared-types@0.1.0 test
+> jest
+
+[1mNo tests found, exiting with code 1[22m
+Run with `--passWithNoTests` to exit with code 0
+In [1m/mnt/host/c/NewProject Fresh/packages/shared-types[22m
+  35 files checked.
+  testMatch: [33m**/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)[39m - 0 matches
+  testPathIgnorePatterns: [33m/node_modules/[39m - 35 matches
+  testRegex:  - 0 matches
+Pattern:  - 0 matches
+npm error Lifecycle script `test` failed with error:
+npm error code 1
+npm error path /mnt/host/c/NewProject Fresh/packages/shared-types
+npm error workspace @homehost/shared-types@0.1.0
+npm error location /mnt/host/c/NewProject Fresh/packages/shared-types
+npm error command failed
+npm error command sh -c jest

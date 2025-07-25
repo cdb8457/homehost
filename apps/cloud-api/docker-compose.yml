@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  homehost-api:
+    build: .
+    ports:
+      - "5000:80"
+      - "5001:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=homehost-db;Database=HomeHostDev;User Id=sa;Password=HomeHost123!;TrustServerCertificate=true;
+      - JWT__Secret=your-super-secret-jwt-signing-key-min-32-chars
+      - JWT__Issuer=homehost-api
+      - JWT__Audience=homehost-client
+      - Steam__ApiKey=${STEAM_API_KEY:-your-steam-api-key}
+      - Discord__ClientId=${DISCORD_CLIENT_ID:-your-discord-client-id}
+      - Discord__ClientSecret=${DISCORD_CLIENT_SECRET:-your-discord-client-secret}
+    depends_on:
+      - homehost-db
+    networks:
+      - homehost-network
+    volumes:
+      - ./logs:/app/logs
+
+  homehost-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=HomeHost123!
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - homehost-db-data:/var/opt/mssql
+      - ./Migrations:/scripts
+    networks:
+      - homehost-network
+
+  homehost-redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - homehost-redis-data:/data
+    networks:
+      - homehost-network
+
+networks:
+  homehost-network:
+    driver: bridge
+
+volumes:
+  homehost-db-data:
+    driver: local
+  homehost-redis-data:
+    driver: local

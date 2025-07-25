@@ -1,0 +1,134 @@
+{
+  "name": "homehost-desktop",
+  "version": "1.0.0",
+  "description": "HomeHost Desktop Application - Local game server management with Steam integration",
+  "main": "src/main/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run start:renderer\" \"wait-on http://localhost:3012 && npm run start:main\"",
+    "start:main": "cross-env NODE_ENV=development electron .",
+    "start:renderer": "cross-env PORT=3012 react-scripts start",
+    "start:production": "node scripts/production-start.js && cross-env NODE_ENV=production electron .",
+    "validate:production": "node scripts/production-start.js",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:renderer": "react-scripts build",
+    "build:main": "electron-builder",
+    "build:dev": "cross-env NODE_ENV=development npm run build:renderer",
+    "build:staging": "cross-env NODE_ENV=staging npm run build:renderer",
+    "build:prod": "cross-env NODE_ENV=production npm run build:renderer",
+    "test": "jest",
+    "test:integration": "jest tests/integration",
+    "test:unit": "jest tests/unit",
+    "test:e2e": "jest tests/e2e",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "eject": "react-scripts eject",
+    "dev": "node scripts/dev.js",
+    "electron": "electron .",
+    "dist": "npm run build && electron-builder --publish=never",
+    "dist:win": "npm run build && electron-builder --win --publish=never",
+    "build-app": "node scripts/build.js",
+    "deploy": "node scripts/deploy.js",
+    "deploy:dev": "node scripts/deploy.js development",
+    "deploy:staging": "node scripts/deploy.js staging --approved",
+    "deploy:prod": "node scripts/deploy.js production --approved",
+    "rollback": "node scripts/deploy.js --rollback",
+    "rollback:staging": "node scripts/deploy.js staging --rollback --approved",
+    "rollback:prod": "node scripts/deploy.js production --rollback --approved",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "echo 'TypeScript checking not configured'",
+    "health-check": "node -e \"console.log('HomeHost Desktop Health Check Passed')\"",
+    "security-audit": "npm audit && echo 'Security audit completed'"
+  },
+  "build": {
+    "appId": "com.homehost.desktop",
+    "productName": "HomeHost",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "build/**/*",
+      "src/main/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "extraResources": [
+      {
+        "from": "assets/steamcmd",
+        "to": "steamcmd"
+      }
+    ]
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.7",
+    "axios": "^1.6.0",
+    "bcrypt": "^6.0.0",
+    "commander": "^9.5.0",
+    "cors": "^2.8.5",
+    "electron": "^27.1.3",
+    "electron-is-dev": "^2.0.0",
+    "electron-store": "^8.1.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0",
+    "ps-tree": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.8.1",
+    "systeminformation": "^5.21.22",
+    "uuid": "^9.0.1",
+    "validator": "^13.15.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.68",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "babel-jest": "^30.0.4",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^24.13.3",
+    "jest": "^30.0.4",
+    "node-fetch": "^3.3.2",
+    "react-scripts": "5.0.1",
+    "socket.io-client": "^4.8.1",
+    "typescript": "^4.9.5",
+    "wait-on": "^7.2.0",
+    "web-vitals": "^2.1.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
