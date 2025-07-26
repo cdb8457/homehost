@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
-import { ShieldX, ArrowLeft, Home } from 'lucide-react';
+import { Shield, ArrowLeft, Home } from 'lucide-react';
 
 export default function UnauthorizedPage() {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function UnauthorizedPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <div className="text-center">
-            <ShieldX className="mx-auto h-12 w-12 text-red-500 mb-4" />
+           <Shield className="mx-auto h-12 w-12 text-red-500 mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               Access Denied
             </h2>
