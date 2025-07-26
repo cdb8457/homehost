@@ -7,7 +7,7 @@ import CommunityCard from '@/components/ui/CommunityCard';
 import { 
   Search, 
   Filter, 
-  Grid3X3, 
+  Grid, 
   List, 
   Star,
   Users,
