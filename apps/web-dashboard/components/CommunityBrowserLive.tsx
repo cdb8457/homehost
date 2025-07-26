@@ -291,7 +291,7 @@ export default function CommunityBrowserLive({ showAdminView = false, userRole =
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  <Grid3X3 className="w-4 h-4" />
+                  <Grid className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
